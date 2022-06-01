@@ -11948,21 +11948,29 @@
     "грање",
     "здрав",
     "радна",
+    "шегрт",
+    "успут",
+    "надев",
     "рабат",
     "чобан",
+    "ропац",
     "змија",
+    "сокак",
     "жезло",
     "свила",
     "памет",
     "масно",
+    "урлик",
     "сенке",
     "крава",
     "путир",
     "кичма",
+    "бранч",
     "накит",
     "прање",
     "тотем",
     "ћурка",
+    "јуфка",
     "сокак",
     "тачне",
     "пудер",
@@ -12024,7 +12032,7 @@
     "дунав",
     "гамет",
 ];
-let duplicates = answers.filter((e, t) => answers.indexOf(e) != t);
+    let duplicates = answers.filter((e, t) => answers.indexOf(e) != t);
 duplicates.length && console.error("duplicate answers", duplicates);
 const moreAllowedGuesses = [
     "речко",
@@ -30178,6 +30186,11 @@ const allWords = [...answers, ...allowedGuesses];
 
 function getWordOfTheDay() {
     const e = Math.floor((Number(new Date()) + 72e5) / 864e5)
+    let t=e-Math.floor((Number(new Date(2022,0,24))+72e5)/864e5);
+    for(;t>answers.length;)t-=answers.length;return answers[t]}
+
+function getWordOfTheDay() {
+    const e = Math.floor((Number(new Date)+72e5)/864e5)
     let t = e - Math.floor((Number(new Date(2022, 0, 24)) + 72e5) / 864e5);
     for (; t > answers.length; ) t -= answers.length;
     return answers[t];
